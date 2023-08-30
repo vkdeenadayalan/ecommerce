@@ -1,0 +1,29 @@
+{% extends "eapp/base.html" %}
+{% block content %} 
+
+
+<section class="bg-light py-4 my-5" style="min-height: 600px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h4 class="mb-3">Catagories</h4>
+                <hr style="border-color: rgb(199, 196, 196);">
+            </div>
+            {% for item in catagory %}
+            <div class="col-md-3 col-lg-3">
+            <div class="card my-3">
+                
+                <img src="{{ item.image.url }}" class="card-image-top item-image-content" alt="category">
+                <a href="{% url 'collections' item.cat_slug %}">
+                    <div class="card-body">
+                        <h5 class="card-title text-dark title-content">{{item.name}}</h5>
+                        <p class="card-text text-dark text-content">{{item.description}}</p>
+                    </div>
+                </a>      
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    </div>
+</section>
+{% endblock content %}
