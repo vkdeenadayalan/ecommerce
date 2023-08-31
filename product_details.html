@@ -1,0 +1,43 @@
+{% extends "eapp/base.html" %}
+{% block title %}
+{% endblock title %}
+
+{% block content %}
+{% include 'eapp/message.html' %}
+<section class="bg-light py-4 my-5">
+    <div class="container">
+        <div class="row">                                                                                
+            <div class="col-12">
+                <h4 class="mb-3">{{catagory_name}} Products</h4>
+                <hr style="border-color: rgb(199, 196, 196);">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+                        <li class="breadcrumb-item">{{Catagory_name}} Collection</li>
+                    </ol>
+                </nav>
+               
+            </div>
+           
+            <div class="col-md-4 col-lg-3" style="min-height: 800px;">
+            <div class="card my-3">
+                
+                <img src="{{ products_details.image.url }}"  class="card-image-top" alt="cataogryies">
+                
+                <a href="">
+                    <div class="card-body">
+                        <h5 class="card-title text-primary">{{products_details.name}}</h5>
+                        <p class="card-text">
+                            
+                            <span class="float-end new_price">Rs.{{ products_details.price | stringformat:'d'}}</span>
+                        </p>
+                       
+                    </div>
+                </a>      
+            </div>
+        </div>
+        
+    </div>
+    </div>
+</section>
+{% endblock content %}
